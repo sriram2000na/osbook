@@ -1,3 +1,4 @@
+; [bits 32]
 ; [org 0x7c00]
 print:
     pusha
@@ -44,3 +45,22 @@ print_hex:
         ret
     storage:
         db 0,0
+VIDEO_MEMORY equ 0xb8000
+WHITE_ON_BLACK equ 0x0f
+print_no_bios:
+    pusha
+    mov edx,VIDEO_MEMORY
+    mov ah,WHITE_ON_BLACK
+print_no_bios_begin:
+    mov al,[ebx]
+    cmp al,0x00
+    je print_no_bios_end
+    mov [edx],ax
+    add ebx,1
+    add edx,2
+    jmp print_no_bios_begin
+print_no_bios_end:
+    popa
+    ret
+DUMMY_MESSAGE:
+    db "DUMMY MAN",0

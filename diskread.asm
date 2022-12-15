@@ -17,5 +17,3 @@ disk_error:
     jmp $
 DISK_ERROR_MESSAGE:
     db "DISK Reading Error Man!!!!!",0
-DUMMY_MESSAGE:
-    db "DUMMY MAN",0
