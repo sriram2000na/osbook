@@ -1,4 +1,3 @@
-; [bits 32]
 ; [org 0x7c00]
 print:
     pusha

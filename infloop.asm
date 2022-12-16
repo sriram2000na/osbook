@@ -3,10 +3,14 @@
 ; [bits 32]
 ; mov bx,HELLO_MSG
 ; call print
-; mov bx,GOODBYE_MSG
-; call print
-; mov dx,0x1fb6
+xor ax,ax
+mov cs,ax
+mov ax,0x0001
+mov ds,ax
+mov bx,GOODBYE_MSG;7c3c
+; mov dx,bx
 ; call print_hex
+call print
 ;----------  reading sectors from disk  --------------
 ; mov bp,0x8000
 ; mov sp,bp
@@ -21,9 +25,9 @@
 ; mov dx,[0x9000 + 512]
 ; call print_hex
 ;-----------------------------------------------------
-mov ebx,HELLO_MSG
-call print_no_bios
-; call print_hex
+; mov ebx,HELLO_MSG
+; call print_no_bios
+;-----------------------------------------------------
 jmp $
 %include "printline.asm"
 %include "diskread.asm"
