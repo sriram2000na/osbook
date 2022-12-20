@@ -46,6 +46,7 @@ print_hex:
         db 0,0
 VIDEO_MEMORY equ 0xb8000
 WHITE_ON_BLACK equ 0x0f
+[bits 32]
 print_no_bios:
     pusha
     mov edx,VIDEO_MEMORY

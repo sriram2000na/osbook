@@ -16,4 +16,4 @@ disk_error:
     call print
     jmp $
 DISK_ERROR_MESSAGE:
-    db "DISK Reading Error Man!!!!!",0
+    db "DISK Reading Error Man!!!!!O",0

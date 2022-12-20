@@ -1,0 +1,6 @@
+vgaromimage: file=/usr/share/bochs/VGABIOS-lgpl-latest
+romimage: file=/usr/share/bochs/BIOS-bochs-latest
+megs: 128
+ata0-master: type=disk, path="./bin/hd.img", mode=flat
+boot: disk
+display_library: x, options="gui_debug"
